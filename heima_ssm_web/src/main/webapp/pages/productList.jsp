@@ -240,10 +240,10 @@
 										<th class="text-center">操作</th>
 									</tr>
 								</thead>
+									<c:forEach items="${productList}" var="product">
 								<tbody>
 
 
-									<c:forEach items="${productList}" var="product">
 
 										<tr>
 											<td><input name="ids" type="checkbox"></td>

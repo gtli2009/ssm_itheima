@@ -12,6 +12,6 @@ public interface TravellerDao {
      * @return
      */
     @Select("select * from traveller where id in (select travellerId from order_traveller where orderId=#{ordersId})")
-    List<Traveller> findByOrdersId(String ordersId);
+    List<Traveller> findByOrdersId(String ordersId)throws Exception;
 
 }

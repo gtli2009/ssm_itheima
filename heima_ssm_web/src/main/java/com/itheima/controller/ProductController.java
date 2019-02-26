@@ -9,6 +9,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.servlet.ModelAndView;
 
+import javax.annotation.security.RolesAllowed;
 import java.util.List;
 
 @RequestMapping("/product")
@@ -23,6 +24,7 @@ public class ProductController {
      * @return
      * @throws Exception
      */
+    @RolesAllowed("ADMIN")
     @RequestMapping("/findAll")
     public ModelAndView findAll() throws Exception {
         ModelAndView mv = new ModelAndView();
@@ -38,7 +40,7 @@ public class ProductController {
      * @return
      */
         @RequestMapping("/saveProduct")
-        public String saveProduct (Product product){
+        public String saveProduct (Product product)throws Exception{
             productService.saveProduct(product);
             return "redirect:findAll";
 

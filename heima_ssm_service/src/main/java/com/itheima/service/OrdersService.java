@@ -10,13 +10,13 @@ public interface OrdersService {
      * 查询所有订单
      * @return
      */
-    List<Orders> findAll(int page ,int size);
+    List<Orders> findAll(Integer page ,Integer size) throws Exception;
 
     /**
      * 根据id查询orders详情
      * @param id
      * @return
      */
-    Orders findById(String id);
+    Orders findById(String id) throws Exception;
 
 }

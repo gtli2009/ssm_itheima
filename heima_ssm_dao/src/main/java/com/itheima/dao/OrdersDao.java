@@ -25,7 +25,7 @@ public interface OrdersDao {
             @Result(property = "orderDes", column = "orderDes"),
             @Result(property = "product", column = "productId", javaType = Product.class, one = @One(select = "com.itheima.dao.ProductDao.findById")),
     })
-    List<Orders> findAll();
+    List<Orders> findAll()throws Exception;
 
     /**
      * 根据id查询Orders详情
@@ -46,7 +46,7 @@ public interface OrdersDao {
             @Result(property = "member", column = "memberId", javaType = Member.class, one = @One(select = "com.itheima.dao.MemberDao.findById")),
             @Result(property = "travellers", column = "id", javaType = java.util.List.class, many = @Many(select = "com.itheima.dao.TravellerDao.findByOrdersId")),
     })
-    Orders findById(String id);
+    Orders findById(String id)throws Exception;
 
 
 }
